@@ -109,12 +109,15 @@ printf("\n");
 printf("Comparação_De_Cartas\n"); 
 printf("Optado pelo atributo: População\n"); 
 
+     // A população 1 sendo maior que a 2, gera verdadeira e a informação é apresentada como vencedora. 
   if (populacao > populacao2) {
      printf("Resultado: Primeira Carta %s é a vencedora!\n", codigo); 
   }
+     // Caso a população 1 seja menor que a 2, gera verdadeira e a informação é apresentada como vencedora, caso seja maior ai apresenta como falso
    else if (populacao < populacao2) { 
      printf("Resultado: Segunda Carta %s é a vencedora!\n", codigo2); 
   } 
+    // Caso ambas apresentem (=) igualdade, apresentará empate. 
    else { 
      printf("Resultado: Deram Empate!\n); 
   }
