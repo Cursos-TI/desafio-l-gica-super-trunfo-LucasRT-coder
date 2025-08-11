@@ -1,4 +1,6 @@
 #include <stdio.h> 
+#include <stdlib.h>
+#include <time.h>
 
 int main (){
 
@@ -11,8 +13,6 @@ int main (){
         float densidade; 
         float pib_per_capita; 
         float super_poder; 
-        
-  
 
     // Dados da Carta 2 
     unsigned long int populacao2; 
@@ -24,6 +24,9 @@ int main (){
         float pib_per_capita2; 
         float super_poder2; 
 
+    // Informação pré-menu, Switch e If-else 
+    int opcao; 
+  
      // Abertura do mesmo 
 printf("Desafio Aula: Super_Trunfo_C_Estacio. \n"); 
 printf("\n");
@@ -122,6 +125,105 @@ printf("Optado pelo atributo: População\n");
      printf("Resultado: Deram Empate!\n); 
   }
 
+     // MENU - Apresentação de atributos para o jogador. 
+    printf("### Menu - Escolha seus Atributos ###\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade\n");
+    scanf("%d", &opcao);
+
+switch(opcao) {
+        case 1: // População
+            if(populacao > populacao2) {
+                printf("Carta 1 venceu por maior população!\n");
+            } else if(populacao2 > populacao) {
+                printf("Carta 2 venceu por maior população!\n");
+            } else {
+                printf("Empate na população! Comparando área como desempate\n");
+                if(area > area2) {
+                    printf("Carta 1 venceu pelo desempate de área!\n");
+                } else if(area2 > area) {
+                    printf("Carta 2 venceu pelo desempate de área!\n");
+                } else {
+                    printf("Ocorreu Empate!\n");
+                }
+            }
+            break;
+
+        case 2: // Área
+            if(area > area2) {
+                printf("Carta 1 venceu por maior área!\n");
+            } else if(area2 > area) {
+                printf("Carta 2 venceu por maior área!\n");
+            } else {
+                printf("Empate na área! Comparando população como desempate\n");
+                if(populacao > populacao2) {
+                    printf("Carta 1 venceu pelo desempate de população!\n");
+                } else if(populacao2 > populacao) {
+                    printf("Carta 2 venceu pelo desempate de população!\n");
+                } else {
+                    printf("Ocorreu Empate!\n");
+                }
+            }
+            break;
+
+        case 3: // PIB
+            if(pib > pib2) {
+                printf("Carta 1 venceu por maior PIB!\n");
+            } else if(pib2 > pib) {
+                printf("Carta 2 venceu por maior PIB!\n");
+            } else {
+                printf("Empate no PIB! Comparando população como desempate\n");
+                if(populacao > populacao2) {
+                    printf("Carta 1 venceu pelo desempate de população!\n");
+                } else if(populacao2 > populacao) {
+                    printf("Carta 2 venceu pelo desempate de população!\n");
+                } else {
+                    printf("Ocorreu Empate!\n");
+                }
+            }
+            break;
+
+        case 4: // Pontos turísticos
+            if(pontosTuristicos > pontosTuristicos2) {
+                printf("Carta 1 venceu por mais pontos turísticos!\n");
+            } else if(pontosTuristicos2 > pontosTuristicos) {
+                printf("Carta 2 venceu por mais pontos turísticos!\n");
+            } else {
+                printf("Empate nos pontos turísticos! Comparando PIB como desempate\n");
+                if(pib > pib2) {
+                    printf("Carta 1 venceu pelo desempate de PIB!\n");
+                } else if(pib2 > pib) {
+                    printf("Carta 2 venceu pelo desempate de PIB!\n");
+                } else {
+                    printf("Ocorreu Empate!\n");
+                }
+            }
+            break;
+
+        case 5: // Densidade populacional 
+            if(densidade < densidade2) {
+                printf("Carta 1 venceu por menor densidade populacional!\n");
+            } else if(densidade2 < densidade) {
+                printf("Carta 2 venceu por menor densidade populacional!\n");
+            } else {
+                printf("Empate na densidade! Comparando população como desempate\n");
+                if(populacao > populacao2) {
+                    printf("Carta 1 venceu pelo desempate de população!\n");
+                } else if(populacao2 > populacao) {
+                    printf("Carta 2 venceu pelo desempate de população!\n");
+                } else {
+                    printf("Ocorreu Empate!\n");
+                }
+            }
+            break;
+
+        default:
+            printf("Opção inválida!\n");
+    }
+ 
 return 0; 
 
 }
